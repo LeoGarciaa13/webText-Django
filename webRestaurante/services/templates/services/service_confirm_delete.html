@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% include 'services/menu_services.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-9 mx-auto text-light">
+                <div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <p>El elemento "{{ object.title }}" será eliminado</p>
+                        <p>¿Estás seguro?</p>
+                        {{ form }}
+                        <input type="submit" value="Confirmar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
